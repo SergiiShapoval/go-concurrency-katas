@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1775136019062,
+  "lastUpdate": 1775136304774,
   "repoUrl": "https://github.com/SergiiShapoval/go-concurrency-katas",
   "entries": {
     "Go Solution Benchmarks": [
@@ -310,6 +310,318 @@ window.BENCHMARK_DATA = {
             "value": 323,
             "unit": "allocs/op",
             "extra": "7374 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sergii@firebolt.io",
+            "name": "Sergii Shapoval",
+            "username": "SergiiShapoval"
+          },
+          "committer": {
+            "email": "sergii@firebolt.io",
+            "name": "Sergii Shapoval",
+            "username": "SergiiShapoval"
+          },
+          "distinct": true,
+          "id": "8b59f6b73fd742bdef72ecc597b7cf4518672f45",
+          "message": "docs: update README with benchmark dashboard link",
+          "timestamp": "2026-04-02T16:24:20+03:00",
+          "tree_id": "bde405bba530d326c1a88c1f6e70eda58614e656",
+          "url": "https://github.com/SergiiShapoval/go-concurrency-katas/commit/8b59f6b73fd742bdef72ecc597b7cf4518672f45"
+        },
+        "date": 1775136304446,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkFormattersSequential/retainable/alloc",
+            "value": 97281,
+            "unit": "ns/op\t  196483 B/op\t     323 allocs/op",
+            "extra": "12303 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/alloc - ns/op",
+            "value": 97281,
+            "unit": "ns/op",
+            "extra": "12303 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/alloc - B/op",
+            "value": 196483,
+            "unit": "B/op",
+            "extra": "12303 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/alloc - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "12303 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/free_list",
+            "value": 51489,
+            "unit": "ns/op\t   96641 B/op\t     227 allocs/op",
+            "extra": "23326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/free_list - ns/op",
+            "value": 51489,
+            "unit": "ns/op",
+            "extra": "23326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/free_list - B/op",
+            "value": 96641,
+            "unit": "B/op",
+            "extra": "23326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/free_list - allocs/op",
+            "value": 227,
+            "unit": "allocs/op",
+            "extra": "23326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/sync_pool",
+            "value": 52348,
+            "unit": "ns/op\t   96745 B/op\t     227 allocs/op",
+            "extra": "22586 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/sync_pool - ns/op",
+            "value": 52348,
+            "unit": "ns/op",
+            "extra": "22586 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/sync_pool - B/op",
+            "value": 96745,
+            "unit": "B/op",
+            "extra": "22586 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/retainable/sync_pool - allocs/op",
+            "value": 227,
+            "unit": "allocs/op",
+            "extra": "22586 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/alloc",
+            "value": 165941,
+            "unit": "ns/op\t  507780 B/op\t     323 allocs/op",
+            "extra": "7096 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/alloc - ns/op",
+            "value": 165941,
+            "unit": "ns/op",
+            "extra": "7096 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/alloc - B/op",
+            "value": 507780,
+            "unit": "B/op",
+            "extra": "7096 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/alloc - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "7096 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/free_list",
+            "value": 163354,
+            "unit": "ns/op\t  507781 B/op\t     323 allocs/op",
+            "extra": "7274 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/free_list - ns/op",
+            "value": 163354,
+            "unit": "ns/op",
+            "extra": "7274 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/free_list - B/op",
+            "value": 507781,
+            "unit": "B/op",
+            "extra": "7274 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/free_list - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "7274 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/sync_pool",
+            "value": 164287,
+            "unit": "ns/op\t  507882 B/op\t     323 allocs/op",
+            "extra": "6577 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/sync_pool - ns/op",
+            "value": 164287,
+            "unit": "ns/op",
+            "extra": "6577 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/sync_pool - B/op",
+            "value": 507882,
+            "unit": "B/op",
+            "extra": "6577 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersSequential/oversized/sync_pool - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "6577 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/alloc",
+            "value": 88469,
+            "unit": "ns/op\t  196486 B/op\t     323 allocs/op",
+            "extra": "13470 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/alloc - ns/op",
+            "value": 88469,
+            "unit": "ns/op",
+            "extra": "13470 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/alloc - B/op",
+            "value": 196486,
+            "unit": "B/op",
+            "extra": "13470 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/alloc - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "13470 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/free_list",
+            "value": 49262,
+            "unit": "ns/op\t   96642 B/op\t     227 allocs/op",
+            "extra": "24699 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/free_list - ns/op",
+            "value": 49262,
+            "unit": "ns/op",
+            "extra": "24699 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/free_list - B/op",
+            "value": 96642,
+            "unit": "B/op",
+            "extra": "24699 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/free_list - allocs/op",
+            "value": 227,
+            "unit": "allocs/op",
+            "extra": "24699 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/sync_pool",
+            "value": 53410,
+            "unit": "ns/op\t   96770 B/op\t     227 allocs/op",
+            "extra": "20980 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/sync_pool - ns/op",
+            "value": 53410,
+            "unit": "ns/op",
+            "extra": "20980 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/sync_pool - B/op",
+            "value": 96770,
+            "unit": "B/op",
+            "extra": "20980 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/retainable/sync_pool - allocs/op",
+            "value": 227,
+            "unit": "allocs/op",
+            "extra": "20980 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/alloc",
+            "value": 147562,
+            "unit": "ns/op\t  507786 B/op\t     323 allocs/op",
+            "extra": "7477 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/alloc - ns/op",
+            "value": 147562,
+            "unit": "ns/op",
+            "extra": "7477 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/alloc - B/op",
+            "value": 507786,
+            "unit": "B/op",
+            "extra": "7477 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/alloc - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "7477 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/free_list",
+            "value": 156750,
+            "unit": "ns/op\t  507786 B/op\t     323 allocs/op",
+            "extra": "8053 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/free_list - ns/op",
+            "value": 156750,
+            "unit": "ns/op",
+            "extra": "8053 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/free_list - B/op",
+            "value": 507786,
+            "unit": "B/op",
+            "extra": "8053 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/free_list - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "8053 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/sync_pool",
+            "value": 151881,
+            "unit": "ns/op\t  507894 B/op\t     323 allocs/op",
+            "extra": "7876 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/sync_pool - ns/op",
+            "value": 151881,
+            "unit": "ns/op",
+            "extra": "7876 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/sync_pool - B/op",
+            "value": 507894,
+            "unit": "B/op",
+            "extra": "7876 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFormattersConcurrent/oversized/sync_pool - allocs/op",
+            "value": 323,
+            "unit": "allocs/op",
+            "extra": "7876 times\n4 procs"
           }
         ]
       }
