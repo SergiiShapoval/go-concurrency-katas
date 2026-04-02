@@ -1,0 +1,50 @@
+name: PR Benchmarks
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  benchmark-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pull request branch
+        uses: actions/checkout@v4
+        with:
+          path: pr
+
+      - name: Check out base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: pr/go.mod
+          cache: true
+
+      - name: Run base branch benchmarks
+        working-directory: base
+        run: go test -run '^$' -bench . -benchmem ./.../solution | tee benchmark-output.txt
+
+      - name: Run pull request benchmarks
+        working-directory: pr
+        run: go test -run '^$' -bench . -benchmem ./.../solution | tee benchmark-output.txt
+
+      - name: Compare benchmark results
+        uses: openpgpjs/github-action-pull-request-benchmark@v1
+        with:
+          name: Go Solution Benchmarks
+          tool: go
+          base-benchmark-file-path: base/benchmark-output.txt
+          pr-benchmark-file-path: pr/benchmark-output.txt
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          comment-on-alert: true
+          alert-threshold: 130%
+          fail-on-alert: true
+          fail-threshold: 150%

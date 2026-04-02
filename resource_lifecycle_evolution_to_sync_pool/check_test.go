@@ -13,16 +13,43 @@ var benchmarkSink []string
 func formatterCases() []struct {
 	name         string
 	newFormatter func() formatter
-	wantCreated  int
+	checkCreated func(t *testing.T, got int)
 } {
 	return []struct {
 		name         string
 		newFormatter func() formatter
-		wantCreated  int
+		checkCreated func(t *testing.T, got int)
 	}{
-		{name: "alloc", newFormatter: func() formatter { return NewAllocFormatter() }, wantCreated: 2},
-		{name: "free_list", newFormatter: func() formatter { return NewFreeListFormatter() }, wantCreated: 1},
-		{name: "sync_pool", newFormatter: func() formatter { return NewPoolFormatter() }, wantCreated: 1},
+		{
+			name:         "alloc",
+			newFormatter: func() formatter { return NewAllocFormatter() },
+			checkCreated: func(t *testing.T, got int) {
+				t.Helper()
+				if got != 2 {
+					t.Fatalf("buffers created mismatch: got %d want 2", got)
+				}
+			},
+		},
+		{
+			name:         "free_list",
+			newFormatter: func() formatter { return NewFreeListFormatter() },
+			checkCreated: func(t *testing.T, got int) {
+				t.Helper()
+				if got != 1 {
+					t.Fatalf("buffers created mismatch: got %d want 1", got)
+				}
+			},
+		},
+		{
+			name:         "sync_pool",
+			newFormatter: func() formatter { return NewPoolFormatter() },
+			checkCreated: func(t *testing.T, got int) {
+				t.Helper()
+				if got < 1 || got > 2 {
+					t.Fatalf("buffers created mismatch: got %d want 1 or 2", got)
+				}
+			},
+		},
 	}
 }
 
@@ -85,9 +112,7 @@ func TestFormattersTrackCreatedBuffersAcrossBatches(t *testing.T) {
 			_ = formatter.FormatAll(record, 1)
 			_ = formatter.FormatAll(record, 1)
 
-			if got := formatter.BuffersCreated(); got != tt.wantCreated {
-				t.Fatalf("buffers created mismatch: got %d want %d", got, tt.wantCreated)
-			}
+			tt.checkCreated(t, formatter.BuffersCreated())
 		})
 	}
 }

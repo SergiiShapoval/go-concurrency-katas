@@ -33,7 +33,8 @@ Expected behavior:
 - All formatter implementations produce the same formatted output.
 - Reusing a buffer must not corrupt strings returned by earlier calls.
 - `AllocFormatter` should keep allocating new buffers across batches.
-- `FreeListFormatter` and `PoolFormatter` should reuse buffers across batches.
+- `FreeListFormatter` should reuse buffers across batches.
+- `PoolFormatter` should return buffers to `sync.Pool`, but tests must allow the pool to drop idle buffers between batches.
 - `go test -bench .` should let the learner compare baseline allocation, manual reuse, and `sync.Pool`.
 - The benchmark includes both a retainable workload and an oversized workload.
 - The oversized workload is intentionally large enough to produce formatted outputs that grow beyond `maxRetainedBufferCap`, so the learner can observe what happens when reusable buffers are dropped instead of retained.

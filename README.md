@@ -2,6 +2,8 @@
 
 `go-concurrency-katas` is a learning-by-doing collection of Go concurrency exercises.
 
+[![CI](https://github.com/SergiiShapoval/go-concurrency-katas/actions/workflows/ci.yml/badge.svg)](https://github.com/SergiiShapoval/go-concurrency-katas/actions/workflows/ci.yml)
+
 It is designed for engineers who already know basic Go syntax and want hands-on practice with:
 
 - pipelines
@@ -53,7 +55,25 @@ Quick start:
 ```bash
 go test ./...
 go test ./.../solution
+go test -run '^$' -bench . -benchmem ./.../solution
 ```
+
+CI runs the reference implementations only:
+
+```bash
+go test ./.../solution
+```
+
+This keeps the default GitHub Actions check green while learner starter files in `main.go` still contain TODOs or intentionally incomplete implementations.
+
+Benchmark tracking:
+
+- GitHub Actions also runs `go test -run '^$' -bench . -benchmem ./.../solution` on `main`.
+- Benchmark history is stored in the `gh-pages` branch and rendered as a GitHub Pages dashboard at `/dev/bench`.
+- Before the first benchmark run, create an empty `gh-pages` branch and set GitHub Pages to publish from that branch.
+- The benchmark workflow compares current results with previous history and leaves a workflow summary on each run. Alert comments are enabled for large regressions.
+- Pull requests also run the same benchmark command on both the PR branch and its base branch, then compare the two results on the same runner.
+- The PR benchmark workflow comments on regressions above `130%` and fails above `150%` to reduce noise from GitHub-hosted runner variance.
 
 How to use this repository:
 
