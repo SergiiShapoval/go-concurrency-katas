@@ -1,0 +1,29 @@
+{
+  "id": "core_easy_to_hard",
+  "title": "Core Easy To Hard",
+  "description": "Primary ordered learning path for the go_concurrency exercise set.",
+  "task_ids": [
+    "graceful_pipeline_shutdown",
+    "fan_out_fan_in",
+    "merge_with_waitgroup_and_close_discipline",
+    "startup_gate_with_sync_once_and_sync_cond",
+    "resource_lifecycle_evolution_to_sync_pool",
+    "concurrent_cache_with_sync_map",
+    "ordered_unlimited_buffer_adapter",
+    "cancellation_safe_or_done_and_tee",
+    "bridge_channel",
+    "heartbeats_and_supervision",
+    "bounded_parallel_map",
+    "reusable_timer_batcher",
+    "replicated_requests",
+    "retry_with_deadline_and_backoff",
+    "singleflight_style_duplicate_suppression",
+    "sneaky_race_conditions_and_correct_transfers",
+    "error_propagation_with_bounded_concurrency",
+    "publication_signals",
+    "or_channel",
+    "broken_double_checked_locking_then_fix_it",
+    "count_work_across_background_workers_with_atomics",
+    "build_your_own_sync_once"
+  ]
+}
