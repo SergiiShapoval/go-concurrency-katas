@@ -69,7 +69,8 @@ This keeps the default GitHub Actions check green while learner starter files in
 Benchmark tracking:
 
 - GitHub Actions also runs `go test -run '^$' -bench . -benchmem ./.../solution` on `main`.
-- Benchmark history is stored in the `gh-pages` branch and rendered as a GitHub Pages dashboard at `/dev/bench`.
+- Benchmark history is stored in the `gh-pages` branch and rendered as a GitHub Pages dashboard:
+  [Benchmark Dashboard](https://sergiishapoval.github.io/go-concurrency-katas/dev/bench/).
 - Before the first benchmark run, create an empty `gh-pages` branch and set GitHub Pages to publish from that branch.
 - The benchmark workflow compares current results with previous history and leaves a workflow summary on each run. Alert comments are enabled for large regressions.
 - Pull requests also run the same benchmark command on both the PR branch and its base branch, then compare the two results on the same runner.
